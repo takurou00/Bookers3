@@ -3,7 +3,6 @@ class UsersController < ApplicationController
   
   
 
-  # before_action :ensure_correct_user(params[:id]), {only: [:edit, :update, :destroy]}
 
   def show
   	@user = User.find(params[:id])

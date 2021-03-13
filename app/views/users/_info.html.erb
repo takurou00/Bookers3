@@ -1,20 +1,29 @@
- <h1>User Info</h1>
-      <div>
-        <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format:'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
-      </div>
-      <table class="table">
-        <tbody>
-          <tr>
-            <th>name</th>
-            <th><%= user.name %></th>
+ <div class='container px-5 px-sm-0'>
+  <div class='row'>
+    <div class='col-md-3'>
+      <h2>User info</h2>
+      <table class='table'>
+         <tr>
+           <%= attachment_image_tag user, :profile_image, :fill, 100, 100, format:'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
          </tr>
-          <tr>
-            <th>introduction</th>
-            <th><%= user.introduction %></th>
-          </tr>
-        </tbody>
-      </table>
 
+           <tbody>
+             <tr>
+              <th>name</th>
+              <th><%= user.name %></th>
+             </tr>
+             <tr>
+              <th>introduction</th>
+              <th><%= user.introduction %></th>
+              <th></th>
+             </tr>
+          </tbody>
+       </table>
+     <div class='row'>
       <% if user == current_user %>
-     <%= link_to '',edit_user_path(current_user.id),class: "btn btn-block btn-default glyphicon glyphicon-wrench edit_user_#{current_user.id}" %>
-     <% end %>
+      <%= link_to '',edit_user_path(current_user.id),class: " btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{current_user.id}" %>
+      <% end %>
+     </div>
+    </div>
+   </div>
+  </div>

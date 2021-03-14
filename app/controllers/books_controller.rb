@@ -1,7 +1,7 @@
 class BooksController < ApplicationController
 
 
-  before_action :authenticate_user!, except:[:top, :about]
+  before_action :authenticate_user!
 
   def index
     @books = Book.all
@@ -13,9 +13,6 @@ class BooksController < ApplicationController
     @user = @book.user
     @post = Book.new
 
-  end
-
-  def top
   end
 
   def create
@@ -40,9 +37,7 @@ class BooksController < ApplicationController
     end
   end
 
-  def about
-  end
-
+  
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)

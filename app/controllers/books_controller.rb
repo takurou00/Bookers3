@@ -23,7 +23,7 @@ class BooksController < ApplicationController
     @book.user_id = current_user.id
 
    if @book.save
-      flash[:success] = "successfully"
+      flash[:success] = "You have created book successfully."
       redirect_to @book
     else
       flash[:danger] = @book.errors.full_messages
@@ -46,7 +46,7 @@ class BooksController < ApplicationController
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
-    flash[:success] = "successfully"
+    flash[:success] = "You have updated book successfully."
     redirect_to @book
     else
       flash[:danger] = @book.errors.full_messages

@@ -22,12 +22,8 @@
               <td>
                  <div><%= attachment_image_tag user, :profile_image, :fill, 50, 50, format:'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %></div>
               </td>
-              <td>
-                <%= user.name %>
-              </td>
-              <td>
-                <%= link_to "show",user_path(user.id), class: "user_#{user.id}" %>
-              </td>
+              <td> <%= user.name %></td>
+               <td><%= link_to "Show", "/users/#{user.id}" %></td>
             </tr>
           <% end %>
           </tbody>

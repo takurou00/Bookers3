@@ -10,20 +10,14 @@
   	<h2>Book detail</h2>
   		<table class='table'>
         <tr>
-         <th>
-          <%= attachment_image_tag @book.user, :profile_image, :fill, 50, 50, format:'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %>
-           <%= link_to @user.name ,user_path(@user.id) %>
-         </th>
-         <th><%= @book.title %></th>
+         <th> <%= attachment_image_tag @book.user, :profile_image, :fill, 50, 50, format:'jpeg', class: "pull-left profile-img", fallback: "no_image.jpg" %></th>
+          <td><%= link_to @user.name, user_path(@user) %></td>
+         <th><%= link_to @book.title %></th>
         <th><%= @book.body %></th>
 
       <% if @book.user == current_user %>
-        <td>
-          <%= link_to "edit",edit_book_path, class:"btn btn-sm btn-success" %>
-        </td>
-        <td>
-          <%= link_to "Destroy",book_path,method: :delete, class: "btn btn-sm btn-danger" %>
-        </td>
+        <td> <%= link_to "Edit",edit_book_path, class:"btn btn-sm btn-success" %></td>
+        <td> <%= link_to "Destroy",book_path,method: :delete, class: "btn btn-sm btn-danger" %> </td>
      <% end %>
       </tr>
       </table>

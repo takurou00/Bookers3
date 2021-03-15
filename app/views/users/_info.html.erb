@@ -20,6 +20,8 @@
      <div class='row'>
       <% if user == current_user %>
       <%= link_to '',edit_user_path(current_user.id),class: " btn btn-outline-secondary btn-block fas fa-user-cog edit_user_#{current_user.id}" %>
+      <% else %>
+      <%= link_to '',edit_user_path(user.id),class: " btn btn-outline-secondary btn-block fas fa-user-cog" %>
       <% end %>
      </div>
 

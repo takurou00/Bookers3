@@ -22,11 +22,11 @@ class BooksController < ApplicationController
    if @book.save
       flash[:success] = "You have created book successfully."
       redirect_to @book
-    else
+   else
       flash[:danger] = @book.errors.full_messages
       @books = Book.all
       render 'index'
-    end
+   end
   end
 
 
@@ -37,7 +37,7 @@ class BooksController < ApplicationController
     end
   end
 
-  
+
   def update
     @book = Book.find(params[:id])
     if @book.update(book_params)
@@ -45,7 +45,7 @@ class BooksController < ApplicationController
     redirect_to @book
     else
       flash[:danger] = @book.errors.full_messages
-      render "edit"
+      render 'edit'
     end
   end
 

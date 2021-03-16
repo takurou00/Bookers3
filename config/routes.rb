@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   get '/home/about', to: 'homes#about'
   resources :users
   resources :books
+  patch '/books',to:'books#create'
 end

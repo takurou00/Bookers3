@@ -4,7 +4,7 @@
 
 <h2>Editing Book</h2>
 
-<%= form_for @book do |f| %>
+<%= form_with model: @book,  url: {controller: 'books', action: 'update' }, local:true do |f| %>
   <% if @book.errors.any? %>
      <%= @book.errors.count %> errors prohibited this obj from being saved:
        <ul>
@@ -22,7 +22,7 @@
     </div>
 
     <div class="form-group">
-      <%= f.label :opinion %><br />
+      <%= f.label :body %><br />
       <%= f.text_area :body, autofocus: true ,class: "form-control book_body"%>
     </div>
 
